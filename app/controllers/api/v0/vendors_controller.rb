@@ -26,8 +26,17 @@ class Api::V0::VendorsController < ApplicationController
     end
   end
 
-  def destroy
-    ve
+  def update
+    vendor = Vendor.find(params[:id])
+
+    if vendor.update(vendor_params)
+      render json: VendorSerializer.new(vendor), status: :ok
+    else
+      render json: { errors: [{ detail: vendor.errors.full_messages }]}, status: :unprocessable_entity
+    end
+    
+  rescue ActiveRecord::RecordNotFound
+    render json: { errors: [{ detail: "Couldn't find Vendor with 'id'=#{params[:id]}"}] }, status: :not_found
   end
   
   private
