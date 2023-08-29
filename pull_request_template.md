@@ -2,9 +2,10 @@ Describe the changes made:
 
 
 
-Neccessary checkmarks:
+Necessary checkmarks:
 
     [] All Tests are Passing
+    [] Postman tests are Passing
     [] The code will run locally
 
 Type of change
