@@ -35,17 +35,17 @@ describe "Get One Vendor" do
   end
 
   context "sad path - invalid vendor ID" do
-    it "returns an erro if ID is not valid" do
-      invalid_id = "123123123123"
-
+    it "returns an error if ID is not valid" do
+      invalid_id = "123123123123" 
+    
       get "/api/v0/vendors/#{invalid_id}"
-
-      expect(response).to have_http_status(:not_found)
+    
+      expect(response).to have_http_status(:not_found) 
       error_response = JSON.parse(response.body, symbolize_names: true)
-
+    
       expect(error_response).to have_key(:errors)
       expect(error_response[:errors].first).to have_key(:detail)
       expect(error_response[:errors].first[:detail]).to eq("Couldn't find Vendor with 'id'=#{invalid_id}")
-    end
+    end    
   end
 end

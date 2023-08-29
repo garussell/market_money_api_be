@@ -11,11 +11,11 @@ class Api::V0::VendorsController < ApplicationController
 
   def show
     begin
-      render json: VendorSerializer.new(Vendor.find(vendor_params))
-    rescue
-      render json: { errors: [{ detail:"Couldn't find Vendor with 'id'=#{params[:id]}"}]}, status: :not_found
+      render json: VendorSerializer.new(Vendor.find(params[:id]))
+    rescue ActiveRecord::RecordNotFound
+      render json: { errors: [{ detail: "Couldn't find Vendor with 'id'=#{params[:id]}"}] }, status: :not_found
     end
-  end
+  end  
 
   def create
     begin
@@ -24,6 +24,10 @@ class Api::V0::VendorsController < ApplicationController
     rescue ActiveRecord::RecordInvalid => e
       render json: { errors: [{ detail: e.record.errors.full_messages }]}, status: :bad_request
     end
+  end
+
+  def destroy
+    ve
   end
   
   private
