@@ -2,7 +2,7 @@ Describe the changes made:
 
 
 
-Neccesary checkmarks:
+Neccessary checkmarks:
 
     [] All Tests are Passing
     [] The code will run locally

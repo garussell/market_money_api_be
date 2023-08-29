@@ -10,7 +10,7 @@ describe "Get All Markets" do
       get "/api/v0/markets"
       
       expect(response).to be_successful
-      
+
       markets = JSON.parse(response.body, symbolize_names: true)
       
       expect(markets[:data].count).to eq(10)
