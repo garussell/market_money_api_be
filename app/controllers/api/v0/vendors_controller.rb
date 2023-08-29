@@ -8,4 +8,12 @@ class Api::V0::VendorsController < ApplicationController
       render json: { errors: [{ detail: "Couldn't find Market with 'id'=#{params[:market_id]}"}]}, status: :not_found
     end
   end
+
+  def show
+    begin
+      render json: VendorSerializer.new(Vendor.find(params[:id]))
+    rescue
+      render json: { errors: [{ detail:"Couldn't find Vendor with 'id'=#{params[:id]}"}]}, status: :not_found
+    end
+  end
 end

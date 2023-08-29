@@ -181,15 +181,15 @@
         "lines": [
           1,
           1,
-          21,
-          21,
-          21,
-          21,
-          21,
-          21,
-          21,
-          21,
-          21,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -230,11 +230,13 @@
           1,
           null,
           null,
+          1,
+          null,
           null,
           null
         ]
       },
-      "/Users/allenrussell/turing_work/mod3/projects/market_money/app/models/market.rb": {
+      "/Users/allenrussell/turing_work/mod3/projects/market_money/app/models/vendor.rb": {
         "lines": [
           1,
           1,
@@ -249,30 +251,22 @@
           null
         ]
       },
-      "/Users/allenrussell/turing_work/mod3/projects/market_money/app/models/vendor.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/allenrussell/turing_work/mod3/projects/market_money/app/models/market_vendor.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/allenrussell/turing_work/mod3/projects/market_money/app/controllers/api/v0/vendors_controller.rb": {
         "lines": [
           1,
           1,
           null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
           2,
-          1,
-          1,
           null,
           1,
           null,
@@ -308,6 +302,14 @@
           null
         ]
       },
+      "/Users/allenrussell/turing_work/mod3/projects/market_money/app/models/market_vendor.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/allenrussell/turing_work/mod3/projects/market_money/app/serializers/market_serializer.rb": {
         "lines": [
           1,
@@ -322,8 +324,16 @@
           null,
           null
         ]
+      },
+      "/Users/allenrussell/turing_work/mod3/projects/market_money/app/models/market.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1693328601
+    "timestamp": 1693330393
   }
 }
