@@ -4,11 +4,11 @@ describe "Get One Market" do
   context "happy path - valid market id" do
     before do
       markets = create_list(:market, 10)
-      @market_id = markets.sample.id
+      @valid_id = markets.sample.id
     end
 
     it "returns one market based on ID search" do
-      get "/api/v0/markets/#{@market_id}"
+      get "/api/v0/markets/#{@valid_id}"
 
       expect(response).to be_successful
 
@@ -41,6 +41,9 @@ describe "Get One Market" do
       
       expect(market[:data][:attributes]).to have_key(:lon)
       expect(market[:data][:attributes][:lon]).to be_a(String)
+
+      expect(market[:data][:attributes]).to have_key(:vendor_count)
+      expect(market[:data][:attributes][:vendor_count]).to be_an(Integer)
     end
   end
 
