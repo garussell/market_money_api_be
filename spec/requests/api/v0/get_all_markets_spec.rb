@@ -17,8 +17,8 @@ describe "Get All Markets" do
       
     
       markets[:data].each do |market|
-        expect(market[:attributes]).to have_key(:id)
-        expect(market[:attributes][:id]).to be_an(Integer)
+        expect(market).to have_key(:id)
+        expect(market[:id]).to be_an(String)
         expect(market[:attributes]).to have_key(:name)
         expect(market[:attributes][:name]).to be_a(String)
         

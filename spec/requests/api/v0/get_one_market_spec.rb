@@ -16,8 +16,8 @@ describe "Get One Market" do
 
       expect(market.count).to eq(1)
 
-      expect(market[:data][:attributes]).to have_key(:id)
-      expect(market[:data][:attributes][:id]).to be_an(Integer)
+      expect(market[:data]).to have_key(:id)
+      expect(market[:data][:id]).to be_an(String)
       expect(market[:data][:attributes]).to have_key(:name)
       expect(market[:data][:attributes][:name]).to be_a(String)
       
