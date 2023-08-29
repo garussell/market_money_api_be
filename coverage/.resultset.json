@@ -181,15 +181,15 @@
         "lines": [
           1,
           1,
-          41,
-          41,
-          41,
-          41,
-          41,
-          41,
-          41,
-          41,
-          41,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
+          51,
           null,
           null
         ]
@@ -208,11 +208,11 @@
         "lines": [
           1,
           1,
-          41,
-          41,
-          41,
-          41,
-          41,
+          42,
+          42,
+          42,
+          42,
+          42,
           null,
           null
         ]
@@ -240,6 +240,8 @@
         "lines": [
           1,
           1,
+          null,
+          1,
           1,
           null
         ]
@@ -260,12 +262,19 @@
           2,
           2,
           null,
+          null,
+          1,
+          2,
+          2,
+          null,
           null
         ]
       },
       "/Users/allenrussell/turing_work/mod3/projects/market_money/app/models/market_vendor.rb": {
         "lines": [
           1,
+          1,
+          null,
           1,
           1,
           null
@@ -280,6 +289,16 @@
           2,
           2,
           null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
           null
         ]
       },
@@ -287,7 +306,69 @@
         "lines": [
           1,
           1,
+          null,
+          null,
+          null,
           1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/allenrussell/turing_work/mod3/projects/market_money/spec/requests/api/v0/create_a_vendor_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -410,11 +491,11 @@
           null,
           1,
           1,
-          1,
-          1,
-          1,
+          2,
+          2,
           null,
           null,
+          1,
           1,
           1,
           null,
@@ -526,11 +607,25 @@
           null
         ]
       },
-      "/Users/allenrussell/turing_work/mod3/projects/market_money/app/controllers/api/v0/markets_controller.rb": {
+      "/Users/allenrussell/turing_work/mod3/projects/market_money/app/controllers/api/v0/vendors_controller.rb": {
         "lines": [
           1,
           1,
+          null,
+          2,
           1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          2,
+          1,
+          1,
+          null,
           null,
           null,
           1,
@@ -541,11 +636,40 @@
           1,
           null,
           null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
           null
         ]
       },
       "/Users/allenrussell/turing_work/mod3/projects/market_money/app/controllers/application_controller.rb": {
         "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/allenrussell/turing_work/mod3/projects/market_money/app/serializers/vendor_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/allenrussell/turing_work/mod3/projects/market_money/app/serializers/market_vendor_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
           1,
           null
         ]
@@ -565,45 +689,18 @@
           null
         ]
       },
-      "/Users/allenrussell/turing_work/mod3/projects/market_money/app/serializers/market_vendor_serializer.rb": {
+      "/Users/allenrussell/turing_work/mod3/projects/market_money/app/controllers/api/v0/markets_controller.rb": {
         "lines": [
           1,
           1,
           1,
           null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/allenrussell/turing_work/mod3/projects/market_money/app/serializers/vendor_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
           null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/allenrussell/turing_work/mod3/projects/market_money/app/controllers/api/v0/vendors_controller.rb": {
-        "lines": [
-          1,
           1,
           null,
           2,
           1,
           1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          2,
-          null,
           1,
           null,
           null,
@@ -611,6 +708,6 @@
         ]
       }
     },
-    "timestamp": 1693330614
+    "timestamp": 1693348742
   }
 }

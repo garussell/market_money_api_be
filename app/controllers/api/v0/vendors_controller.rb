@@ -12,8 +12,27 @@ class Api::V0::VendorsController < ApplicationController
   def show
     begin
       render json: VendorSerializer.new(Vendor.find(params[:id]))
-    rescue
-      render json: { errors: [{ detail:"Couldn't find Vendor with 'id'=#{params[:id]}"}]}, status: :not_found
+    rescue ActiveRecord::RecordNotFound
+      render json: { errors: [{ detail: "Couldn't find Vendor with 'id'=#{params[:id]}"}] }, status: :not_found
     end
+  end  
+
+  def create
+    begin
+      vendor = Vendor.create!(vendor_params)
+      render json: VendorSerializer.new(vendor), status: :created
+    rescue ActiveRecord::RecordInvalid => e
+      render json: { errors: [{ detail: e.record.errors.full_messages }]}, status: :bad_request
+    end
+  end
+
+  def destroy
+    ve
+  end
+  
+  private
+
+  def vendor_params
+    params.require(:vendor).permit(:name, :description, :contact_name, :contact_phone, :credit_accepted)
   end
 end

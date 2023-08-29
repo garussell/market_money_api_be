@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 describe "Get One Market" do
-  context "happy path - valid market id" do
-    before do
-      markets = create_list(:market, 10)
-      @valid_id = markets.sample.id
-    end
+  before do
+    markets = create_list(:market, 10)
+    @valid_id = markets.sample.id
+  end
 
+  context "happy path - valid market id" do
     it "returns one market based on ID search" do
       get "/api/v0/markets/#{@valid_id}"
 
