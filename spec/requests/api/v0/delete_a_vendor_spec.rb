@@ -7,7 +7,7 @@ describe "Delete A Vendor" do
   end
 
   context "happy path - successful destroy" do
-    it "successfully removes a vendor" do
+    it "successfully destroys a vendor" do
       delete "/api/v0/vendors/#{@vendor_id}"
 
       expect(response).to have_http_status(:no_content)
