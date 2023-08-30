@@ -27,6 +27,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-/coverage
+coverage
 
-/docs/pull_request_templatel.md
+/docs/pull_request_template.md
