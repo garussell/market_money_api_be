@@ -1,8 +1,4 @@
 class Api::V0::MarketVendorsController < ApplicationController
-  def index
-    render json: MarketVendorSerializer.new(MarketVendor.all)
-  end
-
   def create
     market_vendor = MarketVendor.new(market_vendor_params)
   
