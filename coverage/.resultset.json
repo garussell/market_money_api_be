@@ -208,11 +208,11 @@
         "lines": [
           1,
           1,
-          45,
-          45,
-          45,
-          45,
-          45,
+          65,
+          65,
+          65,
+          65,
+          65,
           null,
           null
         ]
@@ -367,6 +367,42 @@
           1,
           null,
           1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/allenrussell/turing_work/mod3/projects/market_money/spec/requests/api/v0/delete_a_vendor_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
           null,
           null,
           null
@@ -707,6 +743,17 @@
           null,
           null,
           1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
           null,
           1,
           4,
@@ -777,6 +824,6 @@
         ]
       }
     },
-    "timestamp": 1693351665
+    "timestamp": 1693353511
   }
 }
