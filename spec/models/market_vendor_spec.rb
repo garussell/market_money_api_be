@@ -10,4 +10,11 @@ RSpec.describe MarketVendor, type: :model do
     it { should validate_presence_of :market_id }
     it { should validate_presence_of :vendor_id }
   end
+
+  # describe "market_vendor_association" do
+  #   it "returns an error if the association exists" do
+  #     market_vendor_1 = create(:market_vendor)
+
+  #   end
+  # end
 end
