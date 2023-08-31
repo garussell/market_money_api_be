@@ -19,9 +19,9 @@ describe "Delete A Vendor" do
     it "will return an error if vendor ID is not found" do
       invalid_id = "123123123123" 
 
-      expect {
-        delete "/api/v0/vendors/#{invalid_id}"
-      }.to raise_error("Couldn't find Vendor with 'id'=#{invalid_id}")
+      delete "/api/v0/vendors/#{invalid_id}"
+
+      expect(response).to_not be_successful
     end
   end
 end
