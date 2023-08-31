@@ -16,7 +16,7 @@ class Api::V0::MarketVendorsController < ApplicationController
 
     if market_vendor
       market_vendor.destroy
-      render json: {}, status: :no_content
+      head :no_content
     else 
       render json: { errors: [{ detail: "No MarketVendor with market_id=#{params[:market_id]} AND vendor_id=#{params[:vendor_id]} exists"}]}, status: :not_found
     end
