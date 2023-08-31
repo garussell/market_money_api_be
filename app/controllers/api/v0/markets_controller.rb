@@ -22,6 +22,17 @@ class Api::V0::MarketsController < ApplicationController
     end
   end
 
+  def nearest_atms
+    begin
+      market = Market.find(params[:id])
+      search_results = TomtomService.search_nearby_atms(market.lat, market.lon)
+      formatted_data = TomtomFacade.parse_atms(search_results)
+      render json: { data: formatted_data }
+    rescue ActiveRecord::RecordNotFound
+      render json: { errors: [{ detail: "Couldn't find Market with 'id'=#{params[:id]}"}]}, status: :not_found
+    end
+  end
+
   private
 
   def search_params

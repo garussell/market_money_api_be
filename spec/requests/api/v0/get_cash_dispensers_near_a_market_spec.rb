@@ -13,12 +13,37 @@ describe "Get Cash Dispensers Near A Market" do
       expect(response).to be_successful
       market = JSON.parse(response.body, symbolize_names: true)
 
-      require 'pry';binding.pry
+      expect(market).to have_key(:data)
+      expect(market[:data]).to be_an(Array)
+
+      expect(market[:data].first).to have_key(:id)
+      expect(market[:data].first[:id]).to be nil
+
+      expect(market[:data].first).to have_key(:type)
+      expect(market[:data].first[:type]).to be_a(String)
+
+      expect(market[:data].first).to have_key(:attributes)
+      expect(market[:data].first[:attributes]).to be_a(Hash)
+
+      expect(market[:data].first[:attributes]).to have_key(:name)
+      expect(market[:data].first[:attributes][:name]).to be_a(String)
+
+      expect(market[:data].first[:attributes]).to have_key(:address)
+      expect(market[:data].first[:attributes][:address]).to be_a(String)
+
+      expect(market[:data].first[:attributes]).to have_key(:lat)
+      expect(market[:data].first[:attributes][:lat]).to be_a(Float)
+
+      expect(market[:data].first[:attributes]).to have_key(:lon)
+      expect(market[:data].first[:attributes][:lon]).to be_a(Float)
+
+      expect(market[:data].first[:attributes]).to have_key(:distance)
+      expect(market[:data].first[:attributes][:distance]).to be_a(Float)
     end
   end
 
   context "sad path - invalid market_id" do
-    xit "throws an error if the market_id is not valid" do
+    it "throws an error if the market_id is not valid" do
       invalid_id = "123123123123"
       get "/api/v0/markets/#{invalid_id}/nearest_atms"
 
