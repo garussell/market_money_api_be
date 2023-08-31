@@ -14,13 +14,13 @@ Market Money is an API designed to help users find sustainable and local alterna
 - [Contributing](#contributing)
 
 #### Technologies Used
-Ruby 3.2.2
-Rails 7.0.7.2
-Faraday gem for API requests
-JSONAPI Serializer gem for formatting JSON responses
-Faker gem for generating fake data
-SimpleCov gem for code coverage tracking
-Shoulda Matchers gem for testing assertions
+- Ruby 3.2.2
+- Rails 7.0.7.2
+- Faraday gem for API requests
+- JSONAPI Serializer gem for formatting JSON responses
+- Faker gem for generating fake data
+- SimpleCov gem for code coverage tracking
+- Shoulda Matchers gem for testing assertions
 
 #### Installation
 1. Clone the repository to your local machine.
