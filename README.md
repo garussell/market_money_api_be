@@ -3,7 +3,7 @@
 
 #### Overview
 
-Market Money is an API designed to help users find sustainable and local alternatives in their area. The API provides various endpoints that allow users to search for markets, vendors, and more. It incorporates testing, error handling, SQL/AR, and integration with the TomTom API.
+Market Money is an API designed to help users find sustainable and local alternatives in their area. The API provides various endpoints that allow users to search for markets, vendors, and more. It incorporates testing, error handling, SQL/AR, and integration with the [TomTom API](https://developer.tomtom.com/).
 
 #### Table of Contents
 - [Technologies Used](#technologies-used)
