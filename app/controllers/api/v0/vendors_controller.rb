@@ -42,9 +42,8 @@ class Api::V0::VendorsController < ApplicationController
   end
 
   def destroy
-    vendor = Vendor.find(params[:id])
-
     begin
+      vendor = Vendor.find(params[:id])
       vendor.destroy
       head :no_content
     rescue ActiveRecord::RecordNotFound
