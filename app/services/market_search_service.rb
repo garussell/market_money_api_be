@@ -1,7 +1,11 @@
 class MarketSearchService
   def self.search(search_params)
     if valid_params?(search_params)
-      markets = Market.where(search_params)
+      markets = Market.where("city ILIKE ? AND state ILIKE ? AND name ILIKE ?",
+        "%#{search_params[:city]}%",
+        "%#{search_params[:state]}%",
+        "%#{search_params[:name]}%")
+        
       [markets, :ok]
     else
       [{ errors: [{ detail: "Invalid set of parameters. Please provide a valid set of parameters to perform a search with this endpoint." }] }, :unprocessable_entity]  

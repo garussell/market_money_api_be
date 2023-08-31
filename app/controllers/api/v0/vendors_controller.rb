@@ -27,6 +27,7 @@ class Api::V0::VendorsController < ApplicationController
   end
 
   def update
+   begin
     vendor = Vendor.find(params[:id])
 
     if vendor.update(vendor_params)
@@ -35,8 +36,9 @@ class Api::V0::VendorsController < ApplicationController
       render json: { errors: [{ detail: vendor.errors.full_messages }]}, status: :unprocessable_entity
     end
     
-  rescue ActiveRecord::RecordNotFound
-    render json: { errors: [{ detail: "Couldn't find Vendor with 'id'=#{params[:id]}"}] }, status: :not_found
+    rescue ActiveRecord::RecordNotFound
+      render json: { errors: [{ detail: "Couldn't find Vendor with 'id'=#{params[:id]}"}] }, status: :not_found
+    end
   end
 
   def destroy

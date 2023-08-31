@@ -39,7 +39,7 @@ describe "Search Markets by State, City, and/or Name" do
       expect(response).to be_successful
       market = JSON.parse(response.body, symbolize_names: true)
 
-      expect(market).to eq([])
+      expect(market[:data]).to eq([])
     end
   end
   
