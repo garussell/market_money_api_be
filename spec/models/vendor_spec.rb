@@ -42,4 +42,10 @@ RSpec.describe Vendor, type: :model do
       expect(Vendor.multiple_states).to be_an(Array)
     end
   end
+
+  describe "search_by_state" do
+    it "will return vendors that do business in selected state" do
+      expect(Vendor.search_by_state('Colorado')).to be_an(Array)
+    end
+  end
 end

@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       resources :vendors do
         collection do
           get "/multiple_states", to: "multiple_states#index"
+          get "/popular_states", to: "popular_states#index"
+          get :search_by_state
         end
       end
       resources :market_vendors, only: [:create] 

@@ -8,4 +8,8 @@ class MarketSerializer
   attribute :vendor_count do |object|
     object.vendors.count
   end
+
+  def self.popular_states_data(result)
+    result.map(&:attributes).map { |data| data.except('id') }
+  end
 end

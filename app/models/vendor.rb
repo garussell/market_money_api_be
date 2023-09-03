@@ -19,6 +19,14 @@ class Vendor < ApplicationRecord
       .to_a
   end
 
+  def self.search_by_state(state)
+    joins(:markets)
+      .where(markets: { state: state })
+      .select('vendors.*')
+      .group('vendors.id')
+      .to_a
+  end
+
   def states_sold_in
     markets.distinct.pluck(:state)
   end

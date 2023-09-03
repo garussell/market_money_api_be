@@ -41,12 +41,12 @@ describe "Vendors That Sell In More Than One State" do
       end
     end
 
-    it "does coding on the weekends" do
+    it "will throw an error if there are no vendors doing business in more than 1 state" do
       get "/api/v0/vendors/multiple_states"
 
       expect(response).to have_http_status(:not_found)
       error_response = JSON.parse(response.body, symbolize_names: true)
-      
+
       expect(error_response).to have_key(:errors)
       expect(error_response[:errors].first).to have_key(:detail)
       expect(error_response[:errors].first[:detail]).to eq("No Vendors with Multiple States Found")
