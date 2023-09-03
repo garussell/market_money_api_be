@@ -13,12 +13,16 @@ Rails.application.routes.draw do
           get 'nearest_atms'
         end
         
-        resources :vendors, only: [:index]
+        resources :vendors, only: [:index] 
       end
 
       delete "/market_vendors", to: "market_vendors#destroy"
-      
-      resources :vendors
+
+      resources :vendors do
+        collection do
+          get "/multiple_states", to: "multiple_states#index"
+        end
+      end
       resources :market_vendors, only: [:create] 
   
     end

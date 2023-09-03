@@ -3,11 +3,16 @@ require 'rails_helper'
 RSpec.describe Vendor, type: :model do
   before do
     @vendors = create_list(:vendor, 10)
-    @markets = create_list(:market, 10)
+    @co_markets = create_list(:market, 5, state: 'Colorado')
+    @ca_markets = create_list(:market, 5, state: 'California')
     @market_vendors = []
       
-    10.times do |i|
-      @market_vendors << create(:market_vendor, market: @markets[i], vendor: @vendors[i])
+    5.times do |i|
+      @market_vendors << create(:market_vendor, market: @co_markets[i], vendor: @vendors[i])
+    end
+
+    5.times do |i|
+      @market_vendors << create(:market_vendor, market: @ca_markets[i], vendor: @vendors[i])
     end
   end
 
@@ -29,6 +34,12 @@ RSpec.describe Vendor, type: :model do
   describe "states_sold_in" do
     it "returns an array of states vendor sells in" do
       expect(@vendors.first.states_sold_in).to be_an(Array)
+    end
+  end
+
+  describe "#multiple_states" do
+    it "returns all vendors that do business in multiple states" do
+      expect(Vendor.multiple_states).to be_an(Array)
     end
   end
 end

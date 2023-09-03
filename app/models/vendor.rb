@@ -9,6 +9,16 @@ class Vendor < ApplicationRecord
   has_many :market_vendors
   has_many :markets, through: :market_vendors
 
+
+  def self.multiple_states
+    joins(:markets)
+      .group('vendors.id')
+      .select('vendors.*, COUNT(DISTINCT markets.state) AS state_count')
+      .having('COUNT(DISTINCT markets.state) > 1')
+      .order('state_count DESC')
+      .to_a
+  end
+
   def states_sold_in
     markets.distinct.pluck(:state)
   end
