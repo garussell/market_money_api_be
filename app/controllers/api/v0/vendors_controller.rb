@@ -50,6 +50,17 @@ class Api::V0::VendorsController < ApplicationController
       render json: { errors: [{ detail: "Couldn't find Vendor with 'id'=#{params[:id]}"}] }, status: :not_found
     end
   end
+
+  def search_by_state
+    state = params[:state]
+    vendors = Vendor.search_by_state(state)
+
+    if vendors.present?
+      render json: VendorStateSerializer.new(vendors), status: :ok
+    else
+      render json: { errors: [{ detail: "Couldn't find a Vender in #{state}"}] }, status: :not_found
+    end
+  end
   
   private
 
