@@ -12,12 +12,11 @@ class Api::V0::MarketVendorsController < ApplicationController
   end
   
   def destroy
-    market_vendor = MarketVendor.find_by(market_vendor_params)
-
-    if market_vendor
+    begin
+      market_vendor = MarketVendor.find_by(market_vendor_params)
       market_vendor.destroy
       head :no_content
-    else 
+    rescue 
       render json: { errors: [{ detail: "No MarketVendor with market_id=#{params[:market_id]} AND vendor_id=#{params[:vendor_id]} exists"}]}, status: :not_found
     end
   end
